@@ -1,34 +1,32 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-        //pega o nome do aluno
-        //calcula a media de 2 materias
-        //informa se foi aprovado, reprovado ou esta de recuperação
+        Scanner entrada = new Scanner(System.in);
 
-        String primeiraAluna = "Alexandra";
-        String segundaAluna = "Ravena";
+        System.out.println("Olá, bem-vinda ao sistema!");
+        System.out.println("Digite o nome do aluno");
+        String aluno = entrada.nextLine();
 
-        //matérias
-        double notaFilosofia;
-        double notaBiologia;
+        System.out.println("Digite a nota de Filosofia do aluno " +aluno);
+        double notaFilosofia = entrada.nextDouble();
+
+        System.out.println("Digite a nota de Biologia do aluno " +aluno);
+        double notaBiologia = entrada.nextDouble();
+
+        //Calculo da Media Geral e do aluno
         double mediaGeral = 7;
+        double mediaAluno = (notaFilosofia + notaBiologia)/2;
 
-        System.out.println("Olá, bem vinda ao sistema.");
+        if(mediaAluno >= mediaGeral){
 
-        //notas estaticas
-        notaFilosofia = 7.5;
-        notaBiologia = 7.0;
+            System.out.println("O aluno " + aluno + ", tem uma média de " + mediaAluno + " APROVADO.");
 
-        double mediaAluna = (notaFilosofia + notaBiologia)/2;
-
-        if(mediaAluna >= mediaGeral){
-
-            System.out.println("A aluna " + primeiraAluna + ", tem uma média de " + mediaAluna + " e ela foi aprovada!");
-
-        } else if(mediaAluna >= 5 ){
-            System.out.println("Ficou de recuperação, com média " + mediaAluna);
+        } else if(mediaAluno >= 5 ){
+            System.out.println("Ficou de recuperação, com média " + mediaAluno);
         }else{
-            System.out.println("A aluna " + primeiraAluna + ", tem uma média de " + mediaAluna + " e ela foi reprovada.");
+            System.out.println("A aluna " + aluno + ", tem uma média de " + mediaAluno + " REPROVADO.");
         }
 
 
