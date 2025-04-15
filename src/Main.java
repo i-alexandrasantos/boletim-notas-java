@@ -26,7 +26,7 @@ public class Main {
         } else if(mediaAluno >= 5 ){
             System.out.println("Ficou de recuperação, com média " + mediaAluno);
         }else{
-            System.out.println("A aluna " + aluno + ", tem uma média de " + mediaAluno + " REPROVADO.");
+            System.out.println("O aluno " + aluno + ", tem uma média de " + mediaAluno + " REPROVADO.");
         }
 
 
