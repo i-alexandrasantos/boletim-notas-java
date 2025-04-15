@@ -7,7 +7,7 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         ArrayList<Materia> listaMateria = new ArrayList<>();
 
-        System.out.println("========== BOLETIM BIMESTRAL ==========");
+        System.out.println("========== BOLETIM  ==========");
 
         //Pergunta o nome
         System.out.println("Digite o nome do aluno");
@@ -26,38 +26,23 @@ public class Main {
             System.out.println("Digite o NOME da Matéria: ");
             dadosMateria.nomeMateria = entrada.nextLine();
 
-
             System.out.println("=====================");
 
             System.out.println("Digite a NOTA da Matéria: " +dadosMateria.nomeMateria);
             dadosMateria.notaAvaliacao = entrada.nextDouble();
+            entrada.nextLine();
+
+            System.out.println("=====================");
 
             //Array
             listaMateria.add(dadosMateria);
         }
 
-
-
-
-/*        System.out.println("Digite a nota de Filosofia do aluno " +aluno);
-        double notaFilosofia = entrada.nextDouble();
-
-        System.out.println("Digite a nota de Biologia do aluno " +aluno);
-        double notaBiologia = entrada.nextDouble();
-
-        //Calculo da Media Geral e do aluno
-        double mediaGeral = 7;
-        double mediaAluno = (notaFilosofia + notaBiologia)/2;
-
-        if(mediaAluno >= mediaGeral){
-
-            System.out.println("O aluno " + aluno + ", tem uma média de " + mediaAluno + " APROVADO.");
-
-        } else if(mediaAluno >= 5 ){
-            System.out.println("Ficou de recuperação, com média " + mediaAluno);
-        }else{
-            System.out.println("O aluno " + aluno + ", tem uma média de " + mediaAluno + " REPROVADO.");
-        }*/
+        //For-each
+        for (Materia materiadaLista : listaMateria){
+            System.out.println( "Matéria " +materiadaLista.nomeMateria+ " | Nota : " +materiadaLista.notaAvaliacao+
+            " | Status: " +materiadaLista.verificaAprovacao());
+        }
 
 
     }
